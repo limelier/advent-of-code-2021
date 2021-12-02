@@ -1,6 +1,7 @@
+package solvers
+
 /** Solver for [day 1](https://adventofcode.com/2021/day/1) **/
-class Day01Solver {
-    private val input = javaClass.getResource("/inputs/01.txt")!!.readText()
+class Day01Solver : Solver("/inputs/01.txt") {
     private val values = input.lines().map { it.toInt() }
 
     /**
@@ -20,7 +21,7 @@ class Day01Solver {
         return stepsUp
     }
 
-    fun partOne(): Int = countStepsUp()
+    override fun partOne(): Int = countStepsUp()
 
-    fun partTwo(): Int = countStepsUp(3)
+    override fun partTwo(): Int = countStepsUp(3)
 }
