@@ -25,6 +25,11 @@ fun main() {
     val solver = solvers[day - 1]
 
     println("Solving day $day, for input at ${solver.inputFilePath}")
-    println("Part one: ${solver.partOne()}")
-    println("Part two: ${solver.partTwo()}")
+
+    try {
+        println("Part one: ${solver.partOne()}")
+        println("Part two: ${solver.partTwo()}")
+    } catch (_: NotImplementedError) {
+        // silently ignore, just stop printing when a part that isn't implemented is reached
+    }
 }
