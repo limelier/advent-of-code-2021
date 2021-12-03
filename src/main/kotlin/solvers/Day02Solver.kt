@@ -1,5 +1,6 @@
 package solvers
 
+/** Solver for [day 2](https://adventofcode.com/2021/day/2) **/
 class Day02Solver: Solver("/inputs/02.txt") {
     private enum class CommandType { FORWARD, DOWN, UP }
     private data class Command(val type: CommandType, val number: Int)
@@ -18,6 +19,12 @@ class Day02Solver: Solver("/inputs/02.txt") {
         Command(type, number)
     }
 
+    /**
+     * Follow the simple versions of the commands:
+     * - `forward X`: add `X` to horizontal
+     * - `down X`: add `X` to depth
+     * - `up X`: subtract `X` from depth
+     */
     private fun followSimpleCommands(): Position {
         var pos = Position(0, 0)
         for ((type, number) in commands) pos = when(type) {
@@ -28,6 +35,12 @@ class Day02Solver: Solver("/inputs/02.txt") {
         return pos
     }
 
+    /**
+     * Follow the complex versions of the commands, including an `aim` variable:
+     * - `forward X`: add `X` to horizontal, `X * aim` to depth
+     * - `down X`: add `X` to aim
+     * - `up X`: subtract `X` from aim
+     */
     private fun followComplexCommands(): Position {
         var pos = Position(0, 0)
         var aim = 0

@@ -18,7 +18,8 @@ private fun chooseDay(numDays: Int): Int {
 fun main() {
     val solvers = listOf(
         Day01Solver(),
-        Day02Solver()
+        Day02Solver(),
+        Day03Solver(),
     )
     val day = chooseDay(solvers.size)
     val solver = solvers[day - 1]
