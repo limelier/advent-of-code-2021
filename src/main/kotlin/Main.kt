@@ -1,4 +1,5 @@
 import solvers.*
+import solvers.day04.Day04Solver
 
 /** Get a number from the input between 1 and `numDays` */
 private fun chooseDay(numDays: Int): Int {
@@ -16,13 +17,14 @@ private fun chooseDay(numDays: Int): Int {
 }
 
 fun main() {
-    val solvers = listOf(
-        Day01Solver(),
-        Day02Solver(),
-        Day03Solver(),
+    val solverConstructors = listOf(
+        ::Day01Solver,
+        ::Day02Solver,
+        ::Day03Solver,
+        ::Day04Solver,
     )
-    val day = chooseDay(solvers.size)
-    val solver = solvers[day - 1]
+    val day = chooseDay(solverConstructors.size)
+    val solver = solverConstructors[day - 1]()
 
     println("Solving day $day, for input at ${solver.inputFilePath}")
 
