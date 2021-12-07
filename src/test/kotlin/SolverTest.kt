@@ -25,7 +25,7 @@ class SolverTest {
 
     @ParameterizedTest
     @MethodSource("getDays")
-    fun testSolver(day: Int) {
+    fun completesDaySample(day: Int) {
         val solverConstructor = solverConstructors[day - 1]
         val (partOneAnswer, partTwoAnswer) = sampleInputAnswers[day - 1]
         val inputFilePath = "/sample_inputs/${day.toString().padStart(2, '0')}.txt"
