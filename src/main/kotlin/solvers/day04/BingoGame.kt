@@ -5,7 +5,7 @@ internal class BingoGame(
     valueLines: List<List<Int>>,
     private val calledNumbers: List<Int>
 ) {
-    val lines = valueLines.map { valueLine ->
+    private val lines = valueLines.map { valueLine ->
         valueLine.map { Cell(it) }
     }
 
