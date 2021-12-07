@@ -1,7 +1,20 @@
 package solvers
 
+import solvers.day04.Day04Solver
+
+/** The constructor at index X instantiates the solver for day X+1 */
+val solverConstructors = listOf(
+    ::Day01Solver,
+    ::Day02Solver,
+    ::Day03Solver,
+    ::Day04Solver,
+    ::Day05Solver,
+    ::Day06Solver,
+    ::Day07Solver,
+)
+
 abstract class Solver(
-    val inputFilePath: String
+    inputFilePath: String
 ) {
     /** The puzzle input, read from the text file at `inputFilePath` */
     protected val input = javaClass.getResource(inputFilePath)!!.readText()

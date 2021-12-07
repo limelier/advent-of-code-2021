@@ -1,7 +1,7 @@
 package solvers
 
 /** Solver for [day 3](https://adventofcode.com/2021/day/3) */
-class Day03Solver : Solver("/inputs/03.txt"){
+class Day03Solver(inputFilePath: String) : Solver(inputFilePath) {
     private data class BitCounter(var zeroes: Int = 0, var ones: Int = 0) {
         /** Increment the right counter of the character is a '0' or '1', or throw an IllegalStateException otherwise */
         fun increment(bit: Char) = when(bit) {

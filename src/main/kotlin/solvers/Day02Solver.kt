@@ -1,7 +1,7 @@
 package solvers
 
 /** Solver for [day 2](https://adventofcode.com/2021/day/2) **/
-class Day02Solver: Solver("/inputs/02.txt") {
+class Day02Solver(inputFilePath: String) : Solver(inputFilePath) {
     private enum class CommandType { FORWARD, DOWN, UP }
     private data class Command(val type: CommandType, val number: Int)
     private data class Position(val depth: Int, val horizontal: Int)

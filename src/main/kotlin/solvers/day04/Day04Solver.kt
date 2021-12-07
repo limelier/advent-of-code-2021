@@ -2,7 +2,7 @@ package solvers.day04
 
 import solvers.Solver
 
-class Day04Solver : Solver("/inputs/04.txt"){
+class Day04Solver(inputFilePath: String) : Solver(inputFilePath) {
     private val calledNumbers: List<Int>
     private val games: List<BingoGame>
 

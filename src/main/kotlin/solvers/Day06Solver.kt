@@ -55,7 +55,7 @@ class Population (
     }
 }
 
-class Day06Solver : Solver("/inputs/06.txt") {
+class Day06Solver(inputFilePath: String) : Solver(inputFilePath) {
     private val initialPopulation = Population(input.split(",").map { it.toInt() })
 
     init {

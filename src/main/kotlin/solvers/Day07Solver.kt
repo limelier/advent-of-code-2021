@@ -3,7 +3,7 @@ package solvers
 import kotlin.math.abs
 
 
-class Day07Solver : Solver("/inputs/07.txt") {
+class Day07Solver(inputFilePath: String) : Solver(inputFilePath) {
     private val positions = input.split(",").map { it.toInt() }
     private val min = positions.minOrNull()!!
     private val max = positions.maxOrNull()!!

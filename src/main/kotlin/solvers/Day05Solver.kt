@@ -9,7 +9,7 @@ private data class Line(val start: Point, val end: Point) {
 }
 private typealias OceanMap = Array<IntArray>
 
-class Day05Solver : Solver("/inputs/05.txt") {
+class Day05Solver(inputFilePath: String) : Solver(inputFilePath) {
     private val lines = input.lines().map { line ->
         val (startString, endString) = line.split(" -> ")
 

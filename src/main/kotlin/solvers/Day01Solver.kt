@@ -1,7 +1,7 @@
 package solvers
 
 /** Solver for [day 1](https://adventofcode.com/2021/day/1) **/
-class Day01Solver : Solver("/inputs/01.txt") {
+class Day01Solver(inputFilePath: String) : Solver(inputFilePath) {
     private val values = input.lines().map { it.toInt() }
 
     /**
