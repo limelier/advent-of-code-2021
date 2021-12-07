@@ -21,7 +21,7 @@ class Day01Solver : Solver("/inputs/01.txt") {
         return stepsUp
     }
 
-    override fun partOne(): Int = countStepsUp()
+    override fun partOne(): Long = countStepsUp().toLong()
 
-    override fun partTwo(): Int = countStepsUp(3)
+    override fun partTwo(): Long = countStepsUp(3).toLong()
 }

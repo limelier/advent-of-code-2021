@@ -27,15 +27,15 @@ class Day04Solver : Solver("/inputs/04.txt"){
 
     private val finishedGames = games.filter { it.bingoNumberIndex != null }
 
-    override fun partOne(): Int {
+    override fun partOne(): Long {
         val firstWinningGame = finishedGames.minByOrNull { it.bingoNumberIndex!! }!!
         println(firstWinningGame)
-        return firstWinningGame.getScore()!!
+        return firstWinningGame.getScore()!!.toLong()
     }
 
-    override fun partTwo(): Int {
+    override fun partTwo(): Long {
         val lastWinningGame = finishedGames.maxByOrNull { it.bingoNumberIndex!! }!!
         println(lastWinningGame)
-        return lastWinningGame.getScore()!!
+        return lastWinningGame.getScore()!!.toLong()
     }
 }

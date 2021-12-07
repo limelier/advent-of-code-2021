@@ -54,13 +54,13 @@ class Day02Solver: Solver("/inputs/02.txt") {
         return pos
     }
 
-    override fun partOne(): Int {
+    override fun partOne(): Long {
         val position = followSimpleCommands()
-        return position.depth * position.horizontal
+        return (position.depth * position.horizontal).toLong()
     }
 
-    override fun partTwo(): Int {
+    override fun partTwo(): Long {
         val position = followComplexCommands()
-        return position.depth * position.horizontal
+        return (position.depth * position.horizontal).toLong()
     }
 }

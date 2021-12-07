@@ -7,8 +7,8 @@ abstract class Solver(
     protected val input = javaClass.getResource(inputFilePath)!!.readText()
 
     /** Calculate the answer to part one */
-    abstract fun partOne(): Int
+    abstract fun partOne(): Long
 
     /** Calculate the answer to part two */
-    abstract fun partTwo(): Int
+    abstract fun partTwo(): Long
 }

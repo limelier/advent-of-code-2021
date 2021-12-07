@@ -88,11 +88,11 @@ class Day03Solver : Solver("/inputs/03.txt"){
         return oxygenGeneratorRating * co2ScrubberRating
     }
 
-    override fun partOne(): Int {
-        return getPowerConsumption()
+    override fun partOne(): Long {
+        return getPowerConsumption().toLong()
     }
 
-    override fun partTwo(): Int {
-        return getLifeSupportRating()
+    override fun partTwo(): Long {
+        return getLifeSupportRating().toLong()
     }
 }

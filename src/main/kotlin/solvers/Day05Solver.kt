@@ -34,6 +34,7 @@ class Day05Solver : Solver("/inputs/05.txt") {
      *
      * The output can be quite big for actual puzzle inputs.
      * */
+    @Suppress("unused")
     private fun OceanMap.prettyPrint() {
         for (row in this) {
             val rowString = row.joinToString("") {
@@ -110,11 +111,11 @@ class Day05Solver : Solver("/inputs/05.txt") {
         return oceanMap.sumOf { row -> row.count { it >= 2 } }
     }
 
-    override fun partOne(): Int {
-        return getOverlaps(drawDiagonals = false)
+    override fun partOne(): Long {
+        return getOverlaps(drawDiagonals = false).toLong()
     }
 
-    override fun partTwo(): Int {
-        return getOverlaps(drawDiagonals = true)
+    override fun partTwo(): Long {
+        return getOverlaps(drawDiagonals = true).toLong()
     }
 }

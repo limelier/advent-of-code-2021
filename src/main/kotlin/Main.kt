@@ -23,6 +23,8 @@ fun main() {
         ::Day03Solver,
         ::Day04Solver,
         ::Day05Solver,
+        ::Day06Solver,
+        ::Day07Solver,
     )
     val day = chooseDay(solverConstructors.size)
     val solver = solverConstructors[day - 1]()
