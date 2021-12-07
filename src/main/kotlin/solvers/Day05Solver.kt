@@ -34,7 +34,6 @@ class Day05Solver(inputFilePath: String) : Solver(inputFilePath) {
      *
      * The output can be quite big for actual puzzle inputs.
      * */
-    @Suppress("unused")
     private fun OceanMap.prettyPrint() {
         for (row in this) {
             val rowString = row.joinToString("") {
@@ -105,8 +104,11 @@ class Day05Solver(inputFilePath: String) : Solver(inputFilePath) {
         val oceanMap = Array(rowNum) { IntArray(colNum) { 0 } }
         oceanMap.drawLines(drawDiagonals)
 
-        // uncomment only for inputs that would produce a small map (less than 20x20)
-//        oceanMap.prettyPrint()
+        if (oceanMap.size < 20 && oceanMap[0].size < 20) {
+            // pretty print only for small maps
+            oceanMap.prettyPrint()
+            println()
+        }
 
         return oceanMap.sumOf { row -> row.count { it >= 2 } }
     }
