@@ -11,6 +11,7 @@ val solverConstructors = listOf(
     ::Day05Solver,
     ::Day06Solver,
     ::Day07Solver,
+    ::Day08Solver,
 )
 
 abstract class Solver(

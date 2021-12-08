@@ -12,6 +12,7 @@ private val sampleInputAnswers: List<Pair<Long, Long>> = listOf(
     5L to 12L,
     5934L to 26984457539L,
     37L to 168L,
+    26L to 61229L,
 )
 
 /** Test if each solver gets the right answers for its respective day */
