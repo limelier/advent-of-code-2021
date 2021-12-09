@@ -1,13 +1,17 @@
 package solvers
 
-private data class Point(val row: Int, val col: Int)
-private data class Line(val start: Point, val end: Point) {
+import solvers.common.IntArray2D
+import solvers.common.Point2i
+
+private data class Line(val start: Point2i, val end: Point2i) {
     fun isHorizontal(): Boolean = start.row == end.row
     fun isVertical(): Boolean = start.col == end.col
 
-    val points: List<Point> get() = listOf(start, end)
+    val points: List<Point2i> get() = listOf(start, end)
 }
-private typealias OceanMap = Array<IntArray>
+
+private typealias OceanMap = IntArray2D
+private fun OceanMap(rows: Int, cols: Int): OceanMap = IntArray2D(rows, cols)
 
 class Day05Solver(inputFilePath: String) : Solver(inputFilePath) {
     private val lines = input.lines().map { line ->
@@ -17,7 +21,7 @@ class Day05Solver(inputFilePath: String) : Solver(inputFilePath) {
         val (startCol, startRow) = startString.split(",").map { it.toInt() }
         val (endCol, endRow) = endString.split(",").map { it.toInt() }
 
-        Line(Point(startRow, startCol), Point(endRow, endCol))
+        Line(Point2i(startRow, startCol), Point2i(endRow, endCol))
     }
 
     private val rowNum: Int
@@ -98,10 +102,13 @@ class Day05Solver(inputFilePath: String) : Solver(inputFilePath) {
         }
     }
 
-
-
+    /**
+     * Get the number of points where there is an overlap in the lines
+     *
+     * Ignore diagonal lines if `drawDiagonals` is `false`
+     */
     private fun getOverlaps(drawDiagonals: Boolean): Int {
-        val oceanMap = Array(rowNum) { IntArray(colNum) { 0 } }
+        val oceanMap = OceanMap(rowNum, colNum)
         oceanMap.drawLines(drawDiagonals)
 
         if (oceanMap.size < 20 && oceanMap[0].size < 20) {
