@@ -22,7 +22,7 @@ class Day09Solver(inputFilePath: String) : Solver(inputFilePath) {
     }
 
     private fun Point2i.isLowPoint(): Boolean {
-        return neighbors()
+        return fourNeighbors()
             .mapNotNull { heightMap.getOrNull(it) }
             .all { it > heightMap[this] }
     }
@@ -31,7 +31,7 @@ class Day09Solver(inputFilePath: String) : Solver(inputFilePath) {
     private fun floodFill(point: Point2i, basinIndex: Int) {
         basinMap[point] = basinIndex
         basinSizes[basinIndex]++
-        for (neighbor in point.neighbors()) {
+        for (neighbor in point.fourNeighbors()) {
             if (!heightMap.inBounds(neighbor) || heightMap[neighbor] == 9 || basinMap[neighbor] != -1) continue
             floodFill(neighbor, basinIndex)
         }

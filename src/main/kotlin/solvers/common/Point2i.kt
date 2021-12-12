@@ -8,5 +8,6 @@ data class Point2i(
     fun down() = Point2i(row + 1, col)
     fun left() = Point2i(row, col - 1)
     fun right() = Point2i(row, col + 1)
-    fun neighbors() = listOf(up(), down(), left(), right())
+    fun fourNeighbors() = listOf(up(), down(), left(), right())
+    fun eightNeighbors() = fourNeighbors() + listOf(up().left(), up().right(), down().left(), down().right())
 }

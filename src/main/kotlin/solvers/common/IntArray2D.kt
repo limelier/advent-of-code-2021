@@ -29,3 +29,5 @@ fun IntArray2D.coords() = (0 until rows).flatMap { row ->
         Point2i(row, col)
     }
 }
+
+fun IntArray2D.deepClone(): IntArray2D = this.map { it.clone() }.toTypedArray()

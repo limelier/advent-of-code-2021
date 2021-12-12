@@ -13,13 +13,15 @@ val solverConstructors = listOf(
     ::Day07Solver,
     ::Day08Solver,
     ::Day09Solver,
+    ::Day10Solver,
+    ::Day11Solver,
 )
 
 abstract class Solver(
     inputFilePath: String
 ) {
     /** The puzzle input, read from the text file at `inputFilePath` */
-    protected val input = javaClass.getResource(inputFilePath)!!.readText()
+     protected val input = javaClass.getResource(inputFilePath)!!.readText()
 
     /** Calculate the answer to part one */
     abstract fun partOne(): Long
