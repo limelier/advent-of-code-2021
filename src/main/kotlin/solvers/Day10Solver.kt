@@ -1,7 +1,6 @@
 package solvers
 
 import solvers.common.*
-import java.util.*
 
 private val illegalCharScore = mapOf(')' to 3L, ']' to 57L, '}' to 1197L, '>' to 25137L)
 private val missingCharScore = mapOf(')' to 1L, ']' to 2L, '}' to 3L, '>' to 4L)
@@ -40,9 +39,9 @@ class Day10Solver(inputFilePath: String) : Solver(inputFilePath) {
 
         for ((index, char) in line.withIndex()) {
             if (char in "([{<") {
-                stack.push(char)
+                stack.addFirst(char)
             } else {
-                val correct = openToClose[stack.pop()]
+                val correct = openToClose[stack.removeFirst()]
                 if (char != correct) {
                     println(highlightCorruption(line, index))
                     return CheckResult(CheckState.CORRUPTED, char.toString())
