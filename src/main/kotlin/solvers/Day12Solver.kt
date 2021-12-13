@@ -41,7 +41,8 @@ private class CaveSystem {
     /**
      * Find all possible paths through a cave system, from 'start' to 'end'
      *
-     * Small (lowercase-keyed) nodes can only be visited once or twice, while large notes can be visited many times
+     * Small (lowercase-keyed) nodes can only be visited once, while large notes can be visited many times
+     * If `canVisitOneSmallCaveTwice` is true, then one small cave can be visited twice instead of once
      */
     private fun findPaths(visited: List<Cave>, canVisitOneSmallCaveTwice: Boolean): List<List<Cave>> {
         val lastCave = visited.last()
