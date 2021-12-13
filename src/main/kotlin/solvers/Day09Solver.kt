@@ -1,6 +1,6 @@
 package solvers
 
-import solvers.common.*
+import common.*
 
 class Day09Solver(inputFilePath: String) : Solver(inputFilePath) {
     private val heightMap: IntArray2D = input.lines().map { line ->

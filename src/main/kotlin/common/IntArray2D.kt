@@ -1,4 +1,4 @@
-package solvers.common
+package common
 
 typealias IntArray2D = Array<IntArray>
 

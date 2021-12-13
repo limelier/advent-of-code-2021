@@ -1,6 +1,9 @@
 package solvers
 
-import solvers.common.*
+import common.ANSI_BOLD_RED
+import common.ANSI_DARK_GREY
+import common.ANSI_RESET
+import common.ANSI_YELLOW
 
 private val illegalCharScore = mapOf(')' to 3L, ']' to 57L, '}' to 1197L, '>' to 25137L)
 private val missingCharScore = mapOf(')' to 1L, ']' to 2L, '}' to 3L, '>' to 4L)

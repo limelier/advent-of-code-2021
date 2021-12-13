@@ -1,4 +1,4 @@
-package solvers.common
+package common
 
 private const val ESC = '\u001b'
 

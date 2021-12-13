@@ -1,4 +1,4 @@
-package solvers.common
+package common
 
 data class Point2i(
     val row: Int,

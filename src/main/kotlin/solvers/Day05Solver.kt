@@ -1,7 +1,7 @@
 package solvers
 
-import solvers.common.IntArray2D
-import solvers.common.Point2i
+import common.IntArray2D
+import common.Point2i
 
 private data class Line(val start: Point2i, val end: Point2i) {
     fun isHorizontal(): Boolean = start.row == end.row

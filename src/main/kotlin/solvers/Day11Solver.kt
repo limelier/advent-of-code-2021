@@ -1,6 +1,6 @@
 package solvers
 
-import solvers.common.*
+import common.*
 
 class Day11Solver(inputFilePath: String) : Solver(inputFilePath) {
     private val initialState: IntArray2D = input.lines().map { line ->
@@ -11,7 +11,7 @@ class Day11Solver(inputFilePath: String) : Solver(inputFilePath) {
         return this.joinToString(System.lineSeparator()) { row ->
             row.joinToString("") {
                 when (it) {
-                    0 -> "${ANSI_BOLD}0${ANSI_RESET}"
+                    0 -> "${ANSI_BOLD}0$ANSI_RESET"
                     in 1..9 -> "$it"
                     else -> "+"
                 }
