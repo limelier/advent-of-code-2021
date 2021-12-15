@@ -7,10 +7,12 @@ class Day09Solver(inputFilePath: String) : Solver(inputFilePath) {
         line.toCharArray()
             .map { it.digitToInt() }
             .toIntArray()
-    }.toTypedArray()
+    }
+        .toTypedArray()
+        .toIntArray2D()
 
-    private val lowPoints = heightMap.coords().filter { it.isLowPoint() }
-    private val basinMap = IntArray2D(heightMap.rows, heightMap.cols) { -1 }
+    private val lowPoints = heightMap.coords().filter { it.isLowPoint() }.toList()
+    private val basinMap = IntArray2D(heightMap.numRows, heightMap.numCols) { -1 }
     private val basinSizes = IntArray(lowPoints.size) { 0 }
 
     init {

@@ -5,10 +5,12 @@ import common.*
 class Day11Solver(inputFilePath: String) : Solver(inputFilePath) {
     private val initialState: IntArray2D = input.lines().map { line ->
         line.map { it.digitToInt() }.toIntArray()
-    }.toTypedArray()
+    }
+        .toTypedArray()
+        .toIntArray2D()
 
     private fun IntArray2D.ansiString(): String {
-        return this.joinToString(System.lineSeparator()) { row ->
+        return this.rows.joinToString(System.lineSeparator()) { row ->
             row.joinToString("") {
                 when (it) {
                     0 -> "${ANSI_BOLD}0$ANSI_RESET"
@@ -79,7 +81,7 @@ class Day11Solver(inputFilePath: String) : Solver(inputFilePath) {
     }
 
     override fun partTwo(): Long {
-        val boardSize = initialState.coords().size.toLong()
+        val boardSize = initialState.size.toLong()
 
         var state = initialState.deepClone()
         var steps = 0L

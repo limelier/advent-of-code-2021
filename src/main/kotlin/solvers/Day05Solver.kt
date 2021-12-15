@@ -11,7 +11,6 @@ private data class Line(val start: Point2i, val end: Point2i) {
 }
 
 private typealias OceanMap = IntArray2D
-private fun OceanMap(rows: Int, cols: Int): OceanMap = IntArray2D(rows, cols)
 
 class Day05Solver(inputFilePath: String) : Solver(inputFilePath) {
     private val lines = input.lines().map { line ->
@@ -39,7 +38,7 @@ class Day05Solver(inputFilePath: String) : Solver(inputFilePath) {
      * The output can be quite big for actual puzzle inputs.
      * */
     private fun OceanMap.prettyPrint() {
-        for (row in this) {
+        for (row in rows) {
             val rowString = row.joinToString("") {
                 when (it) {
                     0 -> "."
@@ -55,14 +54,14 @@ class Day05Solver(inputFilePath: String) : Solver(inputFilePath) {
     private fun OceanMap.drawHorizontal(row: Int, col1: Int, col2: Int) {
         val (startCol, endCol) = listOf(col1, col2).sorted()
         for (col in startCol..endCol) {
-            this[row][col]++
+            this[row, col]++
         }
     }
 
     private fun OceanMap.drawVertical(col: Int, row1: Int, row2: Int) {
         val (startRow, endRow) = listOf(row1, row2).sorted()
         for (row in startRow..endRow) {
-            this[row][col]++
+            this[row, col]++
         }
     }
 
@@ -84,7 +83,7 @@ class Day05Solver(inputFilePath: String) : Solver(inputFilePath) {
         }
 
         for ((row, col) in rows.zip(cols)) {
-            this[row][col]++
+            this[row, col]++
         }
     }
 
@@ -111,13 +110,13 @@ class Day05Solver(inputFilePath: String) : Solver(inputFilePath) {
         val oceanMap = OceanMap(rowNum, colNum)
         oceanMap.drawLines(drawDiagonals)
 
-        if (oceanMap.size < 20 && oceanMap[0].size < 20) {
+        if (oceanMap.numRows < 20 && oceanMap.numCols < 20) {
             // pretty print only for small maps
             oceanMap.prettyPrint()
             println()
         }
 
-        return oceanMap.sumOf { row -> row.count { it >= 2 } }
+        return oceanMap.count { it >= 2 }
     }
 
     override fun partOne(): Long {
@@ -128,3 +127,4 @@ class Day05Solver(inputFilePath: String) : Solver(inputFilePath) {
         return getOverlaps(drawDiagonals = true).toLong()
     }
 }
+
