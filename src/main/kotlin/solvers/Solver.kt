@@ -1,6 +1,7 @@
 package solvers
 
 import solvers.day04.Day04Solver
+import solvers.day16.Day16Solver
 
 /** The constructor at index X instantiates the solver for day X+1 */
 val solverConstructors = listOf(
@@ -18,6 +19,8 @@ val solverConstructors = listOf(
     ::Day12Solver,
     ::Day13Solver,
     ::Day14Solver,
+    ::Day15Solver,
+    ::Day16Solver,
 )
 
 abstract class Solver(
