@@ -10,4 +10,7 @@ data class Point2i(
     fun right() = Point2i(row, col + 1)
     fun fourNeighbors() = listOf(up(), down(), left(), right())
     fun eightNeighbors() = fourNeighbors() + listOf(up().left(), up().right(), down().left(), down().right())
+    operator fun plus(other: Point2i): Point2i {
+        return Point2i(row + other.row, col + other.col)
+    }
 }
