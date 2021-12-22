@@ -2,6 +2,7 @@ package solvers
 
 import solvers.day04.Day04Solver
 import solvers.day16.Day16Solver
+import solvers.day18.Day18Solver
 
 /** The constructor at index X instantiates the solver for day X+1 */
 val solverConstructors = listOf(
