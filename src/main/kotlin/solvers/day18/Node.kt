@@ -1,6 +1,6 @@
 package solvers.day18
 
-interface Node {
+sealed interface Node {
     fun trySplit(): Node?
 
     fun tryAddingLeft(num: Int): Node?
