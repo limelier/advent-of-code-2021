@@ -24,7 +24,7 @@ val solverConstructors = listOf(
     ::Day16Solver,
     ::Day17Solver,
     ::Day18Solver,
-    { Error("there is no day 19 in ba sing se") },
+    { TODO("there is no day 19 in ba sing se") },
     ::Day20Solver,
 )
 
